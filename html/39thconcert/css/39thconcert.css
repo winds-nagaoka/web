@@ -1,0 +1,416 @@
+/* 演奏会終演のお知らせ */
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  color: white;
+  text-align: center;
+  z-index: 99;
+  transition: all ease 1s;
+}
+.overlay div {
+  margin-bottom: 48px;
+}
+.overlay div p:first-child {
+  margin: 8px;
+  font-size: 36px;
+}
+.overlay div p:last-child {
+  margin: 8px;
+  font-size: 18px;
+}
+@media (max-width: 767px) {
+  .overlay div p:first-child {
+    font-size: 36px;
+  }
+  .overlay div p:last-child {
+    font-size: 18px;
+  }
+}
+.opacity-0 {
+  opacity: 0!important;
+}
+.remove {
+  display: none;
+}
+
+body {
+  background: #fff;
+  animation: bgcolor 2s ease-out 2s forwards;
+}
+@keyframes bgcolor {
+  0% {
+    background: #fff;
+  }
+  100% {
+    background: #000;
+  }
+}
+body::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("../img/concert.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0;
+  animation: bgimage 2s ease-out 2s forwards;
+}
+@keyframes bgimage {
+  0% {
+    opacity: 0;
+    filter: blur(60px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.home {
+  transition: all 1s linear;
+}
+.home.dark {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.home.light {
+  background-color: rgba(0, 0, 0, 0);
+}
+.home i {
+  margin-left: 0.2em;
+}
+.home .main {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.home .main .main-logo {
+  width: 60%;
+  opacity: 0;
+  animation: fade-in 2s linear 4s forwards;
+}
+.home .main .main-logo > svg {
+  fill: white;
+  filter: drop-shadow(0 0 2px #000);
+}
+.home .main .title {
+  width: 60%;
+  margin-top: 36px;
+  opacity: 0;
+  animation: scale-in 2s ease 0s forwards;
+}
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.1, 1.1);
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+.home .main .title > svg {
+  fill: #231815;
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff);
+}
+.home .main .date {
+  width: 40%;
+  margin-top: 36px;
+  margin-bottom: 96px;
+  opacity: 0;
+  animation: fade-in 2s linear 4s forwards;
+}
+.home .main .date > svg {
+  filter: drop-shadow(0 0 2px #000);
+}
+.home .main .date > svg .st0 {
+  fill: #ffffff;
+}
+.home .main .date > svg .st1 {
+  fill: #e50012;
+}
+.home .main .date > svg .st2 {
+  fill: #ffffff;
+}
+.home .main .scroll-guide {
+  position: absolute;
+  top: 100%;
+  display: block;
+  margin: auto;
+  text-align: center;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 0s;
+  animation-delay: 6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  /* animated scroll arrow animation */
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.home .main .scroll-guide::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+  -webkit-animation: scroll_move_down 2s ease-in-out infinite;
+  -moz-animation: scroll_move_down 2s ease-in-out infinite;
+  animation: scroll_move_down 2s ease-in-out infinite;
+}
+@media screen and (orientation: landscape) {
+  .home .main .scroll-guide {
+    bottom: 20px;
+  }
+}
+@keyframes scroll_move_down {
+  0% {
+    transform: translate(0, -20px) rotate(-45deg);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 20px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+.home section {
+  color: #fff;
+  width: 100%;
+  max-width: 600px;
+  margin: 80px auto;
+}
+.home section h2 {
+  display: block;
+  margin-bottom: 16px;
+  padding: 0 32px;
+  font-size: 28px;
+  text-shadow: #000 0 0 10px;
+}
+@media (max-width: 767px) {
+  .home section h2 {
+    padding: 0 24px;
+  }
+}
+.home section h2 + div {
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.home section .contents {
+  padding: 16px 32px;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+}
+@media (max-width: 767px) {
+  .home section .contents {
+    padding: 8px 24px;
+  }
+}
+.home section.about .text {
+  padding: 16px 32px;
+  text-indent: 1em;
+  text-shadow: #000 0 0 10px;
+}
+@media (max-width: 767px) {
+  .home section.about .text {
+    padding: 8px 16px;
+  }
+}
+.home section.about .text p {
+  margin: 0.5em 0;
+}
+.home section.information .contents div {
+  margin: 16px 0 16px;
+}
+.home section.information .contents div span.date {
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  white-space: pre-line;
+}
+.home section.information .contents div span.link {
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+  border-left: 0.55px solid #ccc;
+  white-space: nowrap;
+}
+.home section.information .contents div span.link a {
+  color: #fff;
+  text-decoration: none;
+  white-space: pre-wrap;
+}
+.home section.information .contents div span.link a:hover {
+  opacity: 0.6;
+}
+.home section.program .contents div {
+  margin: 16px 0 16px;
+}
+.home section.program .contents div span.title {
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  white-space: pre-line;
+}
+.home section.program .contents div span.composer {
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+  border-left: 0.55px solid #ccc;
+  white-space: nowrap;
+}
+.home section.place-date .contents > div {
+  margin: 16px 0;
+  font-size: 18px;
+  display: flex;
+}
+.home section.place-date .contents > div .label {
+  margin-right: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.55px solid #ccc;
+}
+.home section.place-date .contents > div .place + div {
+  display: flex;
+  flex-direction: column;
+}
+.home section.ticket .contents > div {
+  margin: 16px 0;
+}
+.home section.ticket .contents > div.price {
+  display: flex;
+  flex-direction: row;
+}
+.home section.ticket .contents > div.price .label {
+  margin-right: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.55px solid #ccc;
+  white-space: nowrap;
+}
+.home section.ticket .contents > div.price .label + div span {
+  white-space: nowrap;
+}
+.home section.ticket .contents .info {
+  margin: 16px 0;
+}
+.home section.ticket ul {
+  margin: 16px 0;
+  list-style-type: disc;
+  padding-left: 1em;
+}
+.home section.ticket ul li {
+  margin: 8px 8px 0;
+}
+.home section.access #map {
+  position: relative;
+  margin: 16px 0;
+  height: 300px;
+  background: #666;
+}
+@media (max-width: 767px) {
+  .home section.access #map {
+    width: 100%;
+    height: 200px;
+    margin: 16px 0 8px;
+  }
+}
+.home section.access a.guide-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 12px;
+  border: 0.55px solid #fff;
+  color: #fff;
+  text-decoration: none;
+}
+.home section.access a.guide-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.home section.access a.guide-button:visited {
+  color: #fff;
+}
+.home section.access .label {
+  margin-top: 16px;
+}
+.home section.access .label + ul {
+  margin-top: 16px;
+  list-style-type: disc;
+  padding-left: 1em;
+}
+.home section.access .label + ul li {
+  margin: 8px 8px 0;
+}
+.home section.access .address {
+  margin: 16px 0;
+}
+.home section.access .address a {
+  margin: 8px;
+  color: #fff;
+  text-decoration: none;
+}
+.home section.access .address a:hover {
+  opacity: 0.6;
+}
+.home section.access .address a:visited {
+  color: #fff;
+}
+.home section.poster .contents figure {
+  max-width: 300px;
+  margin: 16px 0;
+}
+@media (max-width: 767px) {
+  .home section.poster .contents figure {
+    margin: 16px 0 8px;
+  }
+}
+.home section.poster .contents a {
+  display: inline-block;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  border: 0.55px solid #fff;
+  color: #fff;
+  text-decoration: none;
+}
+.home section.poster .contents a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.home section.poster .contents a:visited {
+  color: #fff;
+}
+.home section.message {
+  font-size: 18px;
+  text-align: center;
+  opacity: 0.8;
+}
+.home .block.back-navigation > div > div a,
+.home .block.back-navigation > div > div div#scrollTop {
+  border-color: #fff;
+  color: #fff;
+}

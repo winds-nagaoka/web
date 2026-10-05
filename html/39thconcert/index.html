@@ -1,0 +1,263 @@
+<?php
+
+// 終演表示のための処理
+$timestamp['present'] = strtotime(date('Y/m/d H:i'));
+// $timestamp['today'] = date('Y/m/d');
+$timestamp['end'] = strtotime('2026-10-11 16:00');
+
+$end = false;
+if ($timestamp['present'] > $timestamp['end']) {
+  $end = true;
+}
+
+?><html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1.0">
+    <meta name="description" content="ザ・ウィンド・アンサンブルでは2026年10月11日(日)に第39回定期演奏会を開催いたします。ぜひ長岡リリックホールにお越しください！">
+    <meta name="keywords" content="ウィンズ,第39回定期演奏会,ウインズ,定期演奏会,長岡市,nagaoka,リリックホール,新潟県,ザウィンドアンサンブル,ザ・ウィンド・アンサンブル,ザウインドアンサンブル,ザ・ウインド・アンサンブル,吹奏楽,winds,thewindensemble">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="fb:app_id" content="1477708412318886">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://winds-n.com/39thconcert/">
+    <meta property="og:title" content="第39回定期演奏会">
+    <meta property="og:description" content="ザ・ウィンド・アンサンブルでは2026年10月11日(日)に第39回定期演奏会を開催いたします。ぜひ長岡リリックホールにお越しください！">
+    <meta property="og:image" content="https://winds-n.com/39thconcert/img/social.png">
+    <meta property="og:image:alt" content="第39回定期演奏会。2026年10月11日(日)、長岡リリックホールにて14:00開演。">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="author" content="The Wind Ensemble">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@winds_nagaoka">
+    <meta name="twitter:domain" content="winds-n.com">
+    <meta name="twitter:creator" content="@winds_nagaoka">
+    <meta name="twitter:title" content="第39回定期演奏会を開催いたします">
+    <meta name="twitter:description" content="2026年10月11日(日)、新潟県長岡市(リリックホール)で演奏いたします。詳細はクリック！">
+    <meta name="twitter:image" content="https://winds-n.com/39thconcert/img/social.png">
+    <meta name="twitter:image:alt" content="第39回定期演奏会。2026年10月11日(日)、長岡リリックホールにて14:00開演。">
+    <title>第39回定期演奏会｜ザ・ウィンド・アンサンブル</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/39thconcert.css">
+    <link rel="shortcut icon" href="../image/favicon.ico">
+    <link rel="apple-touch-icon" href="../image/icon/apple-icon.png">
+    <link rel="icon" type="image/png" href="../image/icon/android-chrome.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  </head>
+  <body>
+
+  <?php if ($end) { ?>
+    <div id="overlay" class="overlay">
+      <div>
+        <p><span>この演奏会は</span><br><span>終演いたしました</span></p>
+        <p><span>ご来場くださいました皆さま、</span><br><span>誠にありがとうございました</span></p>
+      </div>
+    </div>
+  <?php } ?>
+
+    <div id='home' class='home'>
+      <div class="main">
+        <div class="main-logo">
+          <?php require('../image/logo/logo.svg'); ?>
+        </div>
+        <div class="title">
+          <?php require('img/title.svg'); ?>
+        </div>
+        <span class="scroll-guide"></span>
+      </div>
+      <section class="about">
+        <h2>ごあいさつ</h2>
+        <div class="text">
+          <p>
+            ザ・ウィンド・アンサンブルでは2026年10月11日(日)に長岡リリックホールにて第39回定期演奏会を予定しています。
+          </p>
+          <p>
+            私たちの楽団では主に秋の本定期演奏会と春のミニコンサートの年2回、演奏会を開いております。本演奏会では対となる春とはまったく違う雰囲気で、吹奏楽オリジナルやクラシックの吹奏楽アレンジ曲を演奏いたします。
+          </p>
+          <p>
+            この演奏会を通して、音楽の輪、音楽の楽しさをみなさまとともに分かち合うことができればこれ以上の喜びはありません。
+          </p>
+          <p>会員一同、みなさまのお越しをお待ちしております。</p>
+        </div>
+      </section>
+      <section class="program">
+        <h2>プログラム</h2>
+        <div class="contents">
+          <div>
+            <span class="title">ウィークエンド・イン・ニューヨーク</span>
+            <wbr />
+            <span class="composer">P.スパーク</span>
+          </div>
+          <div>
+            <span class="title">《シャコンヌ》無伴奏ヴァイオリンのためのパルティータ第2番 ニ短調 BWV.1004より</span>
+            <wbr />
+            <span class="composer">J.S.バッハ/森田一浩</span>
+          </div>
+          <div>
+            <span class="title">プロローグ・ワン</span>
+            <wbr />
+            <span class="composer">田村修平</span>
+          </div>
+          <div>
+            <span class="title">波の見える風景(改訂新版)</span>
+            <wbr />
+            <span class="composer">真島俊夫</span>
+          </div>
+          <div>
+            <span class="title">レトロ</span>
+            <wbr />
+            <span class="composer">天野正道</span>
+          </div>
+          <div>
+            <span class="title">アパラチアン序曲</span>
+            <wbr />
+            <span class="composer">J.バーンズ</span>
+          </div>
+        </div>
+      </section>
+      <section class="place-date">
+        <h2>日程</h2>
+        <div class="contents">
+          <div>
+            <div class="place label">場所</div>
+            <div>
+              <div>長岡リリックホール</div>
+              <div>コンサートホール</div>
+            </div>
+          </div>
+          <div>
+            <div class="date label">日付</div>
+            <div>2026年10月11日(日)</div>
+          </div>
+          <div>
+            <div class="time-open label">開場</div>
+            <div>13:30</div>
+          </div>
+          <div>
+            <div class="time-start label">開演</div>
+            <div>14:00</div>
+          </div>
+          <div>
+            <div class="conductor label">指揮</div>
+            <div>河本隆吉</div>
+          </div>
+        </div>
+      </section>
+      <section class="ticket">
+        <h2>チケット</h2>
+        <div class="contents">
+          <div class="price">
+            <div class="label">入場料</div>
+            <div>
+              <span>前売券&nbsp;&yen;800(税込)&nbsp;</span>
+              <wbr />
+              <span>当日券&nbsp;&yen;1,000(税込)</span>
+            </div>
+          </div>
+          <div class="info">チケットのお求めはプレイガイドまたは下記までご連絡ください</div>
+          <ul>
+            <li>長岡リリックホール</li>
+            <li>わたじん楽器 長岡店 0258-35-7766</li>
+          </ul>
+        </div>
+      </section>
+      <section class="access">
+        <h2>アクセス</h2>
+        <div class="contents">
+          <div id="map"></div>
+          <a
+            href="https://www.google.co.jp/maps/dir//%E9%95%B7%E5%B2%A1%E3%83%AA%E3%83%AA%E3%83%83%E3%82%AF%E3%83%9B%E3%83%BC%E3%83%AB%E3%80%81%E3%80%92940-2108+%E6%96%B0%E6%BD%9F%E7%9C%8C%E9%95%B7%E5%B2%A1%E5%B8%82%E5%8D%83%E7%A7%8B%EF%BC%93%E4%B8%81%E7%9B%AE%EF%BC%91%EF%BC%93%EF%BC%95%EF%BC%96%E2%88%92%EF%BC%96/@37.4649032,138.8269598,17z"
+            target="_blank"
+            class="guide-button"
+          >
+            リリックホールへのルートを検索<i class="fas fa-external-link-alt"></i>
+          </a>
+          <div>
+            <div class="label">JR長岡駅大手口より</div>
+            <ul>
+              <li>8番線から中央循環バスで、（内回り／近代美術館、外回り／ハイブ長岡）バス停下車、徒歩3分</li>
+              <li>2番線から（日赤病院経由）江陽団地行きバスで、ハイブ長岡バス停下車、徒歩3分</li>
+              <li>2番線から江陽環状線バスで、（外回り／ハイブ長岡）バス停下車、徒歩3分</li>
+              <li>2番線から（日赤病院経由）出雲崎行きバスで、近代美術館バス停下車、徒歩3分</li>
+            </ul>
+          </div>
+          <div>
+            <div class="label">関越・北陸自動車道より</div>
+            <ul>
+              <li>長岡インターチェンジから車で約10分</li>
+            </ul>
+          </div>
+          <div class="address">
+            <p>〒940-2108</p>
+            <p>新潟県長岡市千秋3丁目1356番地6</p>
+            <p>
+              長岡リリックホール
+              <a href="http://www.nagaoka-caf.or.jp/" target="_blank">
+                Webサイト<i class="fas fa-external-link-alt"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="poster">
+        <h2>ポスター</h2>
+        <div class="contents">
+          <figure>
+            <img src="./img/poster_inline.jpg" alt="第39回定期演奏会のポスター" width="2480" height="3508" loading="lazy" />
+          </figure>
+          <a href="./img/poster.jpg" target="_blank" download>
+            ダウンロード
+          </a>
+        </div>
+      </section>
+
+      <section class="message">
+        <p>音楽の輪が限りなく広がりますように</p>
+      </section>
+
+      <div class="block back-navigation">
+        <div>
+          <div>
+            <a href="/" ontouchstart=''>
+              <i class="fas fa-chevron-left"></i>
+              <span>ホームへ戻る</span>
+            </a>
+          </div>
+          <div class="scrollTop" ontouchstart=''>
+            <div id="scrollTop">
+              <i class="fas fa-chevron-up"></i>
+              <span>トップへ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div>
+          <div class="author">
+            <a href="/">
+              <?php require('../image/logo/logo.svg'); ?>
+            </a>
+            <small>&copy; The Wind Ensemble 1985-<?php echo date('Y'); ?> All Rights Reserved.</small>
+          </div>
+          <div class="link">
+            <ul>
+              <li>
+                <a href="https://member.winds-n.com">会員専用ページ</a>
+              </li>
+              <li>
+                <a href="../policy">個人情報保護方針</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="text/javascript" src="js/39thconcert.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV0-BnYAJ4B3a7GG6sTh2lIh4PCtb5qZc&callback=initMap" async defer></script>
+    <?php include('../js/analytics.js'); ?>
+  </body>
+</html>
